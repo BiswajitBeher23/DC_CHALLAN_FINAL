@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery Challan Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dc-form-container">
+        <h2>DELIVERY CHALLAN</h2>
+        <form id="dcForm">
+            <div class="header-details">
+                <div class="company-info">
+                    <img src="albot_technologies_logo.png" alt="Albot Logo" style="width: 50px;">
+                    <p><strong>Albot Technologies</strong><br>
+                    Bangalore<br>Karnataka<br>India</p>
+                </div>
+                <div class="challan-info-grid">
+                    <div><label>CUSTOMER CODE</label> <input type="text" id="customerCode" required></div>
+                    <div><label>CHALLAN NO.</label> <span id="challanNo">ALB/DC/001</span></div>
+                    <div><label>P.O. NO.</label> <input type="text" id="poNo"></div>
+                    <div><label style="color: red;">Mod Confirmation</label> <input type="text" id="modConfirmation"></div>
+                    <div><label style="color: red;">DATE</label> <span id="deliveryDate"></span></div>
+                    <div><label style="color: red;">ORDER PLACED BY</label> <input type="text" id="orderPlacedBy"></div>
+                    <div><label style="color: red;">REFERENCE</label> <input type="text" id="reference"></div>
+                    <div><label style="color: red;">Mobile No.</label> <input type="text" id="mobileNo"></div>
+                    <div><label style="color: red;">VEHICLE NUMBER</label> <input type="text" id="vehicleNumber"></div>
+                    <div><label style="color: red;">RECEIVED BY</label> <input type="text" id="receivedBy"></div>
+                    <div><label style="color: red;">DELIVERED BY</label> <input type="text" id="deliveredBy"></div>
+                    <div><label style="color: red;">Mobile No.</label> <input type="text" id="receivedByMobileNo"></div>
+                </div>
+            </div>
+
+            <div class="to-address">
+                <p style="color: red;">TO</p>
+                <div id="customerAddress">
+                    <p>Enter Customer Code to load address...</p>
+                </div>
+            </div>
+
+            <h3 style="color: red;">PARTICULARS</h3>
+            <table class="items-table">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">Sl. No.</th>
+                        <th style="width: 5%;">Item</th>
+                        <th style="width: 60%;">PARTICULARS</th>
+                        <th style="width: 10%;">Quantity</th>
+                        <th style="width: 20%;">Remarks</th>
+                    </tr>
+                </thead>
+                <tbody id="itemsTableBody">
+                    </tbody>
+            </table>
+
+            <div class="total-section">
+                <div class="company-pan-details">
+                    <label style="color: red;">Company TIN No.:</label> <span>29ABBCE151B</span>
+                    <label style="color: red;">Company PAN No.:</label> <span>AAXCD2088Q</span>
+                </div>
+                <div class="total-quantity">
+                    <label style="color: red;">TOTAL QTY:</label> <span id="totalQuantity">0</span>
+                </div>
+            </div>
+
+            <p class="not-for-sale" style="color: red;">NOT FOR SALE - RETURNABLE BASIS ONLY</p>
+
+            <div class="signature-section">
+                <p style="color: red;">NOTE:</p>
+                <p>Subject to Bengaluru Jurisdiction</p>
+                <div class="signature-boxes">
+                    <div class="box">Delivery Address:</div>
+                    <div class="box">Receiver Details & Signature</div>
+                    <div class="box">for Guru-Goutam Hitech Private Limited</div>
+                    <div class="box" style="text-align: right;">Authorised Signatory</div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" id="cancelBtn" onclick="cancelForm()">Cancel</button>
+                <button type="submit" id="saveBtn">Save</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // CRITICAL STEP: Ensure the form is initialized when the page loads
+        document.addEventListener('DOMContentLoaded', initializeDcForm);
+    </script>
+</body>
+</html>

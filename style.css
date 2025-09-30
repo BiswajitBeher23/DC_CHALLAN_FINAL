@@ -1,0 +1,341 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* --- Login Page Styles --- */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for full width */
+}
+
+.login-container button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Dashboard Styles --- */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ccc;
+    background-color: #f8f8f8;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-profile i {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.dashboard-main {
+    display: flex;
+    flex: 1;
+}
+
+.left-panel {
+    width: 200px;
+    background-color: #3f51b5; /* A primary color */
+    color: white;
+    padding: 20px 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-panel h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.left-panel button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #5c6bc0;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.left-panel button:hover {
+    background-color: #7986cb;
+}
+
+.content-area {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.search-dc-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.dc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dc-table th, .dc-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.dc-table th {
+    background-color: #e2e2e2;
+    color: #333;
+    font-weight: bold;
+}
+
+.dc-table .action-icon {
+    cursor: pointer;
+    margin: 0 5px;
+    color: #007bff;
+}
+
+.dc-table .action-icon:hover {
+    color: #0056b3;
+}
+
+.pagination {
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #666;
+}
+
+/* --- DC Form Styles --- */
+.dc-form-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+}
+
+.dc-form-container h2 {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.header-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.company-info {
+    width: 30%;
+}
+
+.challan-info-grid {
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    font-size: 0.8em;
+}
+
+.challan-info-grid label {
+    display: block;
+    font-weight: bold;
+}
+
+.challan-info-grid input {
+    width: calc(100% - 4px);
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+.challan-info-grid span {
+    font-weight: bold;
+}
+
+.to-address {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.to-address p:first-child {
+    font-weight: bold;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.items-table th, .items-table td {
+    border: 1px solid #000;
+    padding: 5px;
+    text-align: left;
+}
+
+.items-table th {
+    background-color: #eee;
+    text-align: center;
+}
+
+.items-table input, .items-table textarea {
+    width: 95%;
+    border: none;
+    resize: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.add-btn {
+    background: none;
+    border: 1px solid #eaec6d;
+    color: rgb(1, 1, 14);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #000;
+    padding-top: 10px;
+}
+
+.total-quantity {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.not-for-sale {
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.signature-section {
+    margin-top: 20px;
+    border-top: 1px solid #000;
+    padding-top: 10px;
+}
+
+.signature-boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.signature-boxes .box {
+    border: 1px solid #000;
+    min-height: 80px;
+    padding: 5px;
+    font-size: 0.8em;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#cancelBtn {
+    background-color: #dc3545;
+    color: white;
+}
+
+#saveBtn {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Hide elements for non-admin on dashboard */
+.admin-only.hide {
+    display: none !important;
+}
+
+/* Specific styling for the row with 'Add Additional Item/Header' buttons */
+.add-row td {
+    text-align: center !important;
+    border-style: dashed !important;
+}
+
+/* Styling for the Asset Code row */
+.asset-code-row td {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.asset-code-row .asset-codes {
+    border: none !important;
+    width: 100% !important;
+    min-height: 40px;
+}

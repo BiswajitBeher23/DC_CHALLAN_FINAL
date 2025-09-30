@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery Receipt Viewer</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1 { color: #333; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
+        .customer-details { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; background: #f4f4f4; }
+        .content { border: 1px dashed #007bff; padding: 20px; background: #f9f9ff; margin-top: 20px; }
+        .footer { margin-top: 30px; border-top: 1px solid #ccc; padding-top: 10px; font-size: 0.8em; color: #666; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div id="receiptContainer">
+        </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', initializeReceiptPage);
+
+        function initializeReceiptPage() {
+            const params = new URLSearchParams(window.location.search);
+            const challanNo = params.get('challanNo');
+
+            if (!challanNo) {
+                document.getElementById('receiptContainer').innerHTML = '<p class="error">Error: Challan Number not provided.</p>';
+                return;
+            }
+
+            // Find the DC data using the challanNo (dcData is global from script.js)
+            const dc = dcData.find(d => d.challanNo === challanNo);
+
+            if (!dc) {
+                document.getElementById('receiptContainer').innerHTML = `<p class="error">Receipt for Challan ${challanNo} not found.</p>`;
+                return;
+            }
+
+            renderReceiptContent(dc);
+        }
+
+        function renderReceiptContent(dc) {
+            const container = document.getElementById('receiptContainer');
+            const filename = dc.receipt || 'N/A';
+            const fileType = filename.split('.').pop().toUpperCase();
+            
+            // Use default values for optional fields
+            const name = dc.customerName || 'N/A';
+            const address1 = dc.addressLine1 || 'N/A';
+            const address2 = dc.addressLine2 || '';
+            const city = dc.city || 'N/A';
+            const pin = dc.pin || 'N/A';
+
+            container.innerHTML = `
+                <h1>Delivery Receipt View</h1>
+                
+                <div class="customer-details">
+                    <h3>Customer Details:</h3>
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>ID:</strong> ${dc.customerId}</p>
+                    <p><strong>Address:</strong> ${address1}</p>
+                    <p>${address2}</p>
+                    <p>${city} - ${pin}</p>
+                </div>
+
+                <p><strong>Challan No:</strong> ${dc.challanNo}</p>
+                <p><strong>File Name:</strong> ${filename}</p>
+                
+                <div class="content">
+                    
+                   
+                    <p style="margin-top: 30px; text-align: right;">[Signature / Stamp]</p>
+                </div>
+
+                <div class="footer">
+                    Document URL simulated. In a live environment, this would be a direct link to the server-stored PDF/JPEG file.
+                </div>
+                <button onclick="window.print()" style="margin-top: 20px; padding: 10px; cursor: pointer;">Print</button>
+            `;
+        }
+    </script>
+</body>
+</html>

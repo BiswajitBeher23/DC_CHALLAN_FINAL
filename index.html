@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login / Sign Up - Albot Technologies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2 id="formTitle">Albot Technologies Login</h2>
+
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username (e.g., admin or user)" required>
+            <input type="password" id="password" placeholder="Password (e.g., password)" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <form id="signupForm" style="display: none;">
+            <input type="text" id="signupUsername" placeholder="New Username" required>
+            <input type="password" id="signupPassword" placeholder="New Password" required>
+            <select id="signupRole" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option> 
+            </select>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p id="switchFormLink">
+            New user? <a href="#" onclick="showSignUp()">Sign Up</a>
+        </p>
+        <p id="switchLoginLink" style="display: none;">
+            Already have an account? <a href="#" onclick="showLogin()">Login</a>
+        </p>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Initial setup for the form views
+        function showSignUp() {
+            document.getElementById('formTitle').textContent = 'Albot Technologies Sign Up';
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+            document.getElementById('switchFormLink').style.display = 'none';
+            document.getElementById('switchLoginLink').style.display = 'block';
+        }
+
+        function showLogin() {
+            document.getElementById('formTitle').textContent = 'Albot Technologies Login';
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('switchFormLink').style.display = 'block';
+            document.getElementById('switchLoginLink').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
